@@ -11,7 +11,7 @@
         <li class="product">
             <div class="product-name">{{ product.name }}</div>
             <div class="product-description">{{ product.description }}</div>
-            <div class="product-price">{{ product.price }}</div>
+            <div class="product-price">{{ product.price }} USD</div>
 
             <form action="{{ path('add_to_cart') }}" class="order-it" method="post">
                 <input name="product-id" type="hidden" value="{{ product.id }}">

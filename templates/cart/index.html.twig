@@ -16,7 +16,7 @@
             {% for product in products %}
                 <tr class="product">
                     <td class="name">{{ product.name }}</td>
-                    <td class="price">{{ product.price }}</td>
+                    <td class="price">{{ product.price }} USD</td>
                     <td class="quantity">{{ product.quantity }}</td>
                     <td class="remove-product">
                         <form action="{{ path('remove_product') }}" method="post">
