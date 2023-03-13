@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ user.name }}'s profile{% endblock %}
+
+{% block body %}
+    <h1>Hello, {{ user.name }}</h1>
+
+    {% if (orders) %}
+        <h2>Your orders: </h2>
+        <table class="orders">
+            {% for order in orders %}
+                <tr>
+                    <th>Order number: {{ order.id }}</th>
+                </tr>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+
+                {% for product in order.products %}
+                    <tr>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.quantity }}</td>
+                        <td>{{ product.price }} USD</td>
+                    </tr>
+                {% endfor %}
+
+                <tr>
+                    <td>Total:</td>
+                    <td></td>
+                    <td>{{ order.summary_price }} USD</td>
+                </tr>
+
+                <tr>
+                    <td>Creating date:</td>
+                    <td></td>
+                    <td>{{ order.created_at }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>There is no orders in your profile. Go to <a href="{{ path('app_catalog') }}">catalog page</a> to have any orders.</p>
+    {% endif %}
+{% endblock %}

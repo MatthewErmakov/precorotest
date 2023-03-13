@@ -1,0 +1,27 @@
+header .header-inner #menu .menu-items {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 0;
+}
+
+header .header-inner #menu .menu-items li {
+    list-style: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin-top: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    max-width:75%;
+    margin: auto;
+}

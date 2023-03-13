@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in page{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Internet shop</h1>
+    <p>Log in to continue</p>
+    {{ form(form, {'method': 'POST'}) }}
+{% endblock %}

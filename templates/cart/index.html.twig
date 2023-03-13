@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your cart{% endblock %}
+
+{% block body %}
+    <h1>My cart</h1>
+
+    {% if products %}
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th></th>
+            </tr>
+            {% for product in products %}
+                <tr class="product">
+                    <td class="name">{{ product.name }}</td>
+                    <td class="price">{{ product.price }}</td>
+                    <td class="quantity">{{ product.quantity }}</td>
+                    <td class="remove-product">
+                        <form action="{{ path('remove_product') }}" method="post">
+                            <input type="hidden" name="product-id" value="{{ product.id }}">
+                            <button type="submit">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{{ path('submit_cart') }}">
+            Submit
+        </a>
+    {% else %}
+        <p>There is no items in your cart. Go to <a href="{{ path('app_catalog') }}">catalog page</a> to get some
+            products.</p>
+    {% endif %}
+
+{% endblock %}

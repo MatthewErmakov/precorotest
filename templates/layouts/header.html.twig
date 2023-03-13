@@ -1,0 +1,32 @@
+{% extends "./base.html.twig" %}
+
+{% block header %}
+    <header>
+        <div class="header-inner">
+            <nav id="menu">
+                <ul class="menu-items">
+                    <li>
+                        <a href="{{ path('app_catalog') }}">
+                            Catalog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_user_profile') }}">
+                            Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_cart') }}">
+                            My cart
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_user_logout') }}">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+{% endblock %}
